@@ -1,0 +1,44 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+
+
+
+<title>Contact us</title>
+
+</head>
+<body>
+	<div class="container">
+		<h3>Send the Email</h3>
+		<hr color="white">
+		
+	  <form action="#" th:action="@{/send}" th:object="${mail}" method="POST" > 
+
+		<input type="text" class="form-control mb-4 col-4"
+			placeholder="Name"> 
+		
+		<input type="text" th:text="*{mail.text}"
+			class="form-control mb-4 col-4" placeholder="Subject" >
+
+		<textarea class="form-control mb-4 col-4" placeholder="Message" ></textarea>
+
+	
+		
+		<button type="submit" class="btn btn-info col-2">Send</button>
+		</form> 
+
+	</div>
+
+</body>
+</html>
