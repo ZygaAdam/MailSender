@@ -1,12 +1,9 @@
-
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymleaf.org">
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -14,31 +11,23 @@
 	crossorigin="anonymous">
 
 
-
 <title>Contact us</title>
-
 </head>
 <body>
 	<div class="container">
 		<h3>Send the Email</h3>
 		<hr color="white">
-		
 	  <form action="#" th:action="@{/send}" th:object="${mail}" method="POST" > 
-
-		<input type="text" class="form-control mb-4 col-4"
+		<input type="text" th:field="*{name}" class="form-control mb-4 col-4"
 			placeholder="Name"> 
-		
-		<input type="text" th:text="*{mail.text}"
+		<input type="text" th:field="*{subject}"
 			class="form-control mb-4 col-4" placeholder="Subject" >
+		<textarea class="form-control mb-4 col-4" th:field="*{text}"  placeholder="Message" ></textarea>
 
-		<textarea class="form-control mb-4 col-4" placeholder="Message" ></textarea>
 
 	
-		
 		<button type="submit" class="btn btn-info col-2">Send</button>
 		</form> 
-
 	</div>
-
 </body>
 </html>
